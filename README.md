@@ -1,5 +1,5 @@
 # IntALG---indiv
-Para realizar la tarea, como siempre, he comenzado por realizar un repositorio, adjunto enlace: 
+Para realizar la tarea, como siempre, he comenzado por realizar un repositorio, adjunto enlace: https://github.com/acasasaez/IntALG---indiv.git
 
 Los ejercicios son los siguientes:
 
