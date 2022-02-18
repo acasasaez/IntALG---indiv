@@ -45,11 +45,43 @@ abonar(c:CUENTA, credito: REAL))
 
     postcondicion
     #El descubierto autorizado y el importe del crédito no se modifican
-    antiguo (c).descubierto = descubierto
-    antiguo (c).credito = credito 
+    antiguo(c).descubierto = descubierto
+    antiguo(c).credito = credito 
 
     #El saldo aumenta con el credito 
-    c.saldo = antiguo (c).saldo + credito 
+    c.saldo = antiguo(c).saldo + credito 
 fin abonar 
 
+
+Algoritmo 3: Cargar una cuenta 
+cargar (c: CUENTA, debito: REAL)
+
+    precondicion 
+    c.saldo ≠ NULO 
+    debito ≠ NULO 
+    c.saldo + c.descubierto >= debito >= 0
+
+    realización
+    abonar (c, -debito)
+
+    postcondicion
+    #El descubierto autorizado y el importe del debito no se modifican 
+    antiguo(c).descubierto = descubierto
+    antiguo (debito) = debito 
+
+    #Al saldo se le resta el debito 
+    c.saldo = antiguo(c).saldo - debito
+fin cargar 
+
+Algoritmo 4: Consultar una cuenta 
+consultar(c:CUENTA): REAL
+    precondición 
+    c.saldo ≠ NULO 
+
+    realizacion 
+    resultado = c.saldo 
+
+    postcondicion
+    resultado = c.saldo
+fin consultar 
 
