@@ -129,3 +129,18 @@ tipo CUENTA estructura
         saldo >= -descubierto
 fin CUENTA
 
+Algoritmo 1: Definición de abrir CUENTA
+abrir( c:CUENTA, saldo_inicial: REAL)
+    precondición: 
+    saldo_inicial > 0
+    descubierto_MAX >= 0
+
+    realización:
+    c.descubierto = descubierto_MAX
+    c.saldo = saldo_inicial
+
+    postcondicion
+    c.descubierto = descubierto_MAX
+    c.saldo = saldo_inicial
+fin abrir 
+
