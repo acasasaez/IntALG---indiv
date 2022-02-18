@@ -1,4 +1,5 @@
 #Parte 1:
+from argparse import BooleanOptionalAction
 from asyncio import current_task
 from msilib.schema import Directory
 from tkinter.messagebox import ABORTRETRYIGNORE
@@ -34,6 +35,7 @@ abrir( c:CUENTA, saldo_inicial: REAL)
         c.saldo = saldo_inicial
 fin abrir 
 
+#Parte2
 Algoritmo 2: Abonar una cuenta 
 abonar(c:CUENTA, credito: REAL))
     precondicion
@@ -52,7 +54,7 @@ abonar(c:CUENTA, credito: REAL))
     c.saldo = antiguo(c).saldo + credito 
 fin abonar 
 
-
+#Parte 3
 Algoritmo 3: Cargar una cuenta 
 cargar (c: CUENTA, debito: REAL)
 
@@ -73,6 +75,7 @@ cargar (c: CUENTA, debito: REAL)
     c.saldo = antiguo(c).saldo - debito
 fin cargar 
 
+#Parte 4
 Algoritmo 4: Consultar una cuenta 
 consultar(c:CUENTA): REAL
     precondición 
@@ -84,4 +87,32 @@ consultar(c:CUENTA): REAL
     postcondicion
     resultado = c.saldo
 fin consultar 
+
+#Parte 5
+Algoritmo 5: Dfinición es_acredora y es_deudora 
+es_acredora (c:CUENENTA): BOOLEANO 
+    precondicion 
+    c.saldo ≠ NULO 
+
+    realizacion 
+    resultado = (c.saldo >= 0)
+
+    postcondicion
+    resultado = (c.saldo >= 0)
+
+fin es_acredora
+
+
+es_deudora (c:CUENENTA): BOOLEANO 
+    precondicion 
+    c.saldo ≠ NULO 
+
+    realizacion 
+    resultado = (-c.saldo <= c.saldo <=0)
+
+    postcondicion
+    resultado = (-c.saldo <= c.saldo <=0)
+
+fin es_deudora
+
 
