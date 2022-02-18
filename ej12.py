@@ -116,3 +116,16 @@ es_deudora (c:CUENENTA): BOOLEANO
 fin es_deudora
 
 
+#2
+#Parte 1
+tipo CUENTA estructura
+    saldo: REAL
+    descubierto: REAL
+
+    invariante
+        #El descubierto está autorizado
+        descubierto >= 0
+        #El saldo debe ser superior al descubierto autorizado
+        saldo >= -descubierto
+fin CUENTA
+
