@@ -36,7 +36,7 @@ En determinadas circunstancias y para determinados clientes, la banca autoriza u
 
 3. Volver a hacer las definiciones previas para permitir estos descubiertos.
 
-´´´ #Primera parte ejercicio
+``` #Primera parte ejercicio
 
 definir Precio (p1: REAL): REAL #p1 es nuestro impuesto sin IVA
     p2 = float (input ("Introducir el porcentajede impuesto")) #p2 será el porcentaje de IVA añadido
