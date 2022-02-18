@@ -27,3 +27,5 @@ Definir función rem_horas_extra (salrio_bruto: REAL, horas_ext: ENTERO) REAL
     realizazción:
     calcular el precio_hora de la remuneración bruta básica
     Resultado = precio_hora (inf(horas_ext,CANTIDAD_HORS_MAX_1 )* PRECIO_1 + sup(horas_ext - CANTIDAD_HORAS_MAX_1, 0)* PRECIO_2)
+
+    

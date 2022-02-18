@@ -116,7 +116,7 @@ es_deudora (c:CUENENTA): BOOLEANO
 fin es_deudora
 
 
-#2
+#2 DESCUBIERTO AUTORIZADO
 #Parte 1
 tipo CUENTA estructura
     saldo: REAL
@@ -126,7 +126,7 @@ tipo CUENTA estructura
         #El descubierto está autorizado
         descubierto >= 0
         #El saldo debe ser superior al descubierto autorizado
-        saldo >= -descubierto
+        saldo >= descubierto
 fin CUENTA
 
 Algoritmo 1: Definición de abrir CUENTA
@@ -144,3 +144,45 @@ abrir( c:CUENTA, saldo_inicial: REAL)
     c.saldo = saldo_inicial
 fin abrir 
 
+#3 CUENTA Y TIEMPO
+#Parte 1
+tipo CUENTA estructura
+    saldo: REAL
+    descubierto: REAL
+    fecha_descubierto: FECHA #Fecha de inicio del último descubierto
+    duracion_max : FECHA #Duración máxima del descubierto
+
+    invariante
+        #El descubierto está autorizado durante un tiempo limitado
+        descubierto >= 0
+        fecha_descubierto ≠ 0 => fecha_descubierto + duracion_max <= fecha_actual
+        #El saldo debe ser superior al descubierto autorizado
+        saldo >= descubierto
+fin CUENTA
+
+#Partedo 
+Algoritmo 2:Definición de abrir cuenta 
+abrir 
+    Entrada 
+    c: CUENTA
+    saldo_inicial: REAL 
+    descubierto_MAX: REAL
+    duracion_MAX: FECHA
+
+    Precondicion:
+    saldo_inicial> 0
+    descubierto_MAX >=0
+    duracion_MAX >= 0
+
+    Realizacion
+    c.descubierto = c.desubierto_MAX
+    c.saldo = saldo_inicial
+    d.fecha_descubierto = 0
+    c.duracion_max = duracion_max
+
+    postcondicion:
+    c.descubierto = c.desubierto_MAX
+    c.saldo = saldo_inicial
+    d.fecha_descubierto = 0
+    c.duracion_max = duracion_max
+fin abrir 
